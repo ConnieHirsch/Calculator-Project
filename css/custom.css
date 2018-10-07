@@ -1,64 +1,51 @@
 /*! custom.css */
 
 body {
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 40px;
-  line-height: 1.42857143;
-  color: #888;
-  background-color: #84a;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 40px;
+    line-height: 1.42857143;
+    color: #888;
+    background-color: #84a;
 }
 
 button {
-  height: 50px;
-  width: 50px;
-  font-variant: small-caps;
-  font-size: 40px;
-}
-button:hover {
-  color: red;
-}
-.longButton {
-  width: 125px;
-  text-align: center;
-}
-.hiddenButton {
-  background-color: #aaa;
-}
-#calcbody {
-  background-color: #aaa;
-  height: 800px;
-  width: 400px;
-  margin: 10px;
-  padding: 40px;
-}
-#summation {
-  width: 300px;
-  background-color: black;
-  text-align: right;
-  margin: 10px;
-  color: red;
-}
-#input {
-  width: 300px;
-  text-align: right;
-  margin: 10px;
-}
-.jumbotron {
-  padding: 30px 15px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #00007F;
-  background-image: url('../image_file.jpg');
-  background-position: center;
+    height: 50px;
+    width: 50px;
+    font-variant: small-caps;
+    font-size: 40px;
 }
 
-.jumbotron h1,
-.jumbotron .h1 {
-  color: #ffffff;
+button:hover {
+    color: red;
 }
-.jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
-  font-weight: 200;
-  color: #ffffff;
+
+.longButton {
+    width: 125px;
+    text-align: center;
+}
+
+.hiddenButton {
+    background-color: #aaa;
+}
+
+#calcbody {
+    background-color: #aaa;
+    height: 800px;
+    width: 400px;
+    margin: 10px;
+    padding: 40px;
+}
+
+#summation {
+    width: 300px;
+    background-color: black;
+    text-align: right;
+    margin: 10px;
+    color: red;
+}
+
+#input {
+    width: 300px;
+    text-align: right;
+    margin: 10px;
 }

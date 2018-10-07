@@ -1,4 +1,4 @@
-// alert("Yes!");
+// calc.js called by calc.html
 
 var sum = parseInt($('#summation').text());
 var MyAddend = 0;
@@ -34,8 +34,9 @@ $('button').click(function() {
                 break;
             case "/":
                 sum = parseInt(MyAddend) / parseInt(sum);
-                sum = sum.toFixed(3);
-                console.log("decimal added: " + sum);
+                //sum = sum.toFixed(5);
+                //console.log("handled: " + handleDecimals(sum));
+                sum =  handleDecimals(sum);
                 break;
             default:
                 console.log("Problem with MyValue: " + MyValue);
@@ -46,12 +47,23 @@ $('button').click(function() {
         sum = 0;
         addend = 0;
 
-
     } else {
-        // alert("Clicked on " + MyValue);
-        //alert("Sum now " + sum);
+        // We are pressing a number key
+        // Put each number in the Summation box until we hit an Op Key.
         sum = sum + MyValue;
         $('#summation').text(sum);
     }
 
 })
+
+function handleDecimals(value) {
+  if (value % 1 === 0) {
+    console.log(value + ' is a whole number');
+    return value;
+  } else {
+    console.log(value + ' is not a whole number');
+    value = value.toFixed(3);
+    console.log(value + ' is not a whole number');
+    return value;
+  }
+}
