@@ -15,7 +15,7 @@ $('button').click(function() {
     } else if (MyValue == "+" || MyValue == "-" || MyValue == "x" || MyValue == "/") {
         MyAddend = sum;
         operand = MyValue;
-        $('#addend').text(MyAddend);
+        $('#addend').text(MyValue + " " + MyAddend);
         sum = 0;
         $('#summation').text("0");
     } else if (MyValue == "=") {

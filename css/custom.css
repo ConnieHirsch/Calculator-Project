@@ -49,3 +49,6 @@ button:hover {
     text-align: right;
     margin: 10px;
 }
+#addend {
+  display: inline-block;
+}
