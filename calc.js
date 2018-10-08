@@ -39,7 +39,8 @@ $('button').click(function() {
                 console.log("Problem with myNumber: " + myNumber);
         }
 
-        $('#summation').text(sum);
+        parseString = parseFloat(sum);
+        $('#summation').text(parseString.toString());
         $('#addend').text("");
         sum = 0;
         addend = 0;
