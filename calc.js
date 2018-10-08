@@ -5,20 +5,20 @@ var MyAddend = 0;
 var operand;
 
 $('button').click(function() {
-    var MyValue = $(this).text();
+    var myNumber = $(this).text();
 
-    if (MyValue == "C") {
+    if (myNumber == "C") {
         sum = 0;
         addend = 0;
         $('#summation').text("0");
         $('#addend').text("");
-    } else if (MyValue == "+" || MyValue == "-" || MyValue == "x" || MyValue == "/") {
+    } else if (myNumber == "+" || myNumber == "-" || myNumber == "x" || myNumber == "/") {
         MyAddend = sum;
-        operand = MyValue;
-        $('#addend').text(MyValue + " " + MyAddend);
+        operand = myNumber;
+        $('#addend').text(myNumber + " " + MyAddend);
         sum = 0;
         $('#summation').text("0");
-    } else if (MyValue == "=") {
+    } else if (myNumber == "=") {
         console.log("addend: " + MyAddend);
         console.log("sum for operation: " + sum);
 
@@ -36,7 +36,7 @@ $('button').click(function() {
                 sum = handleDecimals(parseFloat(MyAddend) / parseFloat(sum));
                 break;
             default:
-                console.log("Problem with MyValue: " + MyValue);
+                console.log("Problem with myNumber: " + myNumber);
         }
 
         $('#summation').text(sum);
@@ -47,7 +47,9 @@ $('button').click(function() {
     } else {
         // We are pressing a number key
         // Put each number in the Summation box until we hit an Op Key.
-        sum = sum + MyValue;
+        // if there is no value, put a 0 in the summation box, but
+        // when we start a new calculation, no leading zero.
+        sum === 0 ? sum = myNumber: sum = sum + myNumber;
         $('#summation').text(sum);
     }
 
