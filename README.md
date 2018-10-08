@@ -1,5 +1,5 @@
 # Calculator-Project
-Calculator Project
+An Original Calculator page.
 
 A simple calculator to work on my Bootstrap skills -- to re-create a calculator that I can use on my smartphone or in a browser window.
 
