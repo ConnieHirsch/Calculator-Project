@@ -85,7 +85,12 @@ button:hover {
 @media only screen and (max-width: 600px) {
  .btn {
     font-size: 30px;
-    height: 30px;
+    /*height: 30px;*/
     width: 40px;
   }
+  .longButton {
+    width: 125px;
+    text-align: center;
+}
+
 }
