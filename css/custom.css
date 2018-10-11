@@ -1,4 +1,7 @@
 /*! custom.css */
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: "Lucida Console", Monaco, monospace;
@@ -8,20 +11,20 @@ body {
     background-color: #84a;
 }
 
+/*overriding the bootstrap button style for my own sinister purposes*/
+.btn {
+  height: 60px;
+  /*font-size: 40px;*/
+  margin-bottom: 10px;
+}
+
 button {
     height: 50px;
     width: 50px;
     font-variant: small-caps;
-    font-size: 40px;
+    /*font-size: 40px;*/
     border-radius: 6px;
 }
-/*overriding the bootstrap button style for my own sinister purposes*/
-.btn {
-  height: 60px;
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
 button:hover {
     color: red;
 }
@@ -38,13 +41,17 @@ button:hover {
 #calcbody {
     background-color: #aaa;
     height: 100%;
-    width: 96%;
+    width: 330px;
     margin: 10px;
 /*    padding: 40px;
 */}
+.container {
+    width: 310px;
+}
 
 #summation {
     width: 300px;
+    padding-right: 5px;
     background-color: black;
     text-align: right;
     margin: 10px;
@@ -58,4 +65,27 @@ button:hover {
 }
 #addend {
   display: inline-block;
+}
+
+
+/* If the screen size is 601px or more, set the font-size of <div> to 80px */
+@media only screen and (min-width: 601px) {
+  .btn {
+    font-size: 40px;
+  }
+  .container {
+    width: 500px;
+  }
+  #calcbody {
+    width: 400px;
+  }
+}
+
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media only screen and (max-width: 600px) {
+ .btn {
+    font-size: 30px;
+    height: 30px;
+    width: 40px;
+  }
 }
