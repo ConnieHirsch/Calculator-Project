@@ -52,6 +52,10 @@ $('button').click(function() {
         }
 
         floatedString = parseFloat(sum);
+        // Sooner or later, someone will try dividing by 0
+                if (floatedString.toString() == "Infinity") {
+                    alert("Are you crazy?  You're not allowed to divide by ZERO!  You could have blown up the computer!");
+                }
         $('#summation').text(floatedString.toString());
         $('#addend').text("");
         sum = 0;

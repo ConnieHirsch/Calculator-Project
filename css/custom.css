@@ -17,6 +17,9 @@ body {
   /*font-size: 40px;*/
   margin-bottom: 10px;
 }
+.nav {
+    font-size: 18px;
+}
 
 button {
     height: 50px;
