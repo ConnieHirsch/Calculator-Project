@@ -1,9 +1,20 @@
 // calc.js called by calc.html
 
+// initial value in summation box
 var sum = parseFloat($('#summation').text());
+// value to be added/subtracted/etc to the sum
 var MyAddend = 0;
+// operand for calculation of sum and addend
 var operand;
 
+/*
+** central calculation engine
+** C means clear summation value
+** +,-,x,/ are operands
+** = signals end of adding operand, summing up operation, and commences
+**      actual calculation.  This runs a parseFloat to get decimal result
+** default: somehow something went wrong.
+*/
 $('button').click(function() {
     var myNumber = $(this).text();
 
@@ -19,9 +30,10 @@ $('button').click(function() {
         sum = 0;
         $('#summation').text("0");
     } else if (myNumber == "=") {
+        // show the first half of the calculation -- I can forget the number!
         console.log("addend: " + MyAddend);
         console.log("sum for operation: " + sum);
-
+        // now we actually calculate and handle result.
         switch (operand) {
             case "+":
                 sum = handleDecimals(parseFloat(MyAddend) + parseFloat(sum));
