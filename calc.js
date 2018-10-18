@@ -34,7 +34,8 @@ $('button').click(function() {
         console.log("addend: " + MyAddend);
         console.log("sum for operation: " + sum);
         // show the calculation in the addend section.
-        $('#addend').text(MyAddend + operand + sum);
+        var product = MyAddend + operand + sum;
+        $('#addend').text(product);
         // now we actually calculate and handle result.
         switch (operand) {
             case "+":
@@ -56,9 +57,10 @@ $('button').click(function() {
         floatedString = parseFloat(sum);
         // Sooner or later, someone will try dividing by 0
                 if (floatedString.toString() == "Infinity") {
-                    alert("Are you crazy?  You're not allowed to divide by ZERO!  You could have blown up the computer!");
+                    alert("Are you crazy?  \nYou're not allowed to divide by ZERO! \n You could have blown up the computer!");
                 }
         $('#summation').text(floatedString.toString());
+        $('.ticker').prepend(product + " = " + floatedString.toString() + "<br/>").show();
         // sum = 0;
         // addend = 0;
 

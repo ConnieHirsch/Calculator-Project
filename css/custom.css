@@ -59,6 +59,16 @@ button:hover {
   width: 320px;
 }
 
+.ticker {
+  width: 220px;
+  height: 100px;
+  overflow: scroll;
+  font-size: 18px;
+  color: black;
+  background-color: pink;
+  display:none;
+}
+
 #summation {
     width: 300px;
     padding-right: 5px;
