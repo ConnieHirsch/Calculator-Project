@@ -33,6 +33,8 @@ $('button').click(function() {
         // show the first half of the calculation -- I can forget the number!
         console.log("addend: " + MyAddend);
         console.log("sum for operation: " + sum);
+        // show the calculation in the addend section.
+        $('#addend').text(sum + operand + MyAddend);
         // now we actually calculate and handle result.
         switch (operand) {
             case "+":
@@ -57,9 +59,8 @@ $('button').click(function() {
                     alert("Are you crazy?  You're not allowed to divide by ZERO!  You could have blown up the computer!");
                 }
         $('#summation').text(floatedString.toString());
-        $('#addend').text("");
-        sum = 0;
-        addend = 0;
+        // sum = 0;
+        // addend = 0;
 
     } else {
         // We are pressing a number key

@@ -10,6 +10,10 @@ body {
     color: #888;
     background-color: #84a;
 }
+p {
+  font-size: 14px;
+  color: black;
+}
 
 /*overriding the bootstrap button style for my own sinister purposes*/
 .btn {
@@ -50,6 +54,9 @@ button:hover {
 */}
 .container {
     width: 310px;
+}
+.about {
+  width: 320px;
 }
 
 #summation {
