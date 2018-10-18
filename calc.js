@@ -34,7 +34,7 @@ $('button').click(function() {
         console.log("addend: " + MyAddend);
         console.log("sum for operation: " + sum);
         // show the calculation in the addend section.
-        $('#addend').text(sum + operand + MyAddend);
+        $('#addend').text(MyAddend + operand + sum);
         // now we actually calculate and handle result.
         switch (operand) {
             case "+":
