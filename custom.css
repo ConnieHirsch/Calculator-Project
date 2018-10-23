@@ -15,6 +15,16 @@ p {
   color: black;
 }
 
+/*overriding the bootstrap button style for my own sinister purposes*/
+.btn {
+  height: 60px;
+  /*font-size: 40px;*/
+  margin-bottom: 10px;
+}
+.nav {
+    font-size: 18px;
+}
+
 button {
     height: 50px;
     width: 50px;
@@ -22,20 +32,9 @@ button {
     /*font-size: 40px;*/
     border-radius: 6px;
 }
-
-/*overriding the bootstrap styles for my own sinister purposes*/
-.btn {
-  height: 60px;
-  margin-bottom: 10px;
+button:hover {
+    color: red;
 }
-.nav {
-    font-size: 18px;
-}
-.btn:hover {
-    color: #84a;
-}
-
-/* back to regular CSS styles */
 
 .longButton {
     width: 125px;
@@ -66,7 +65,7 @@ button {
   overflow: scroll;
   font-size: 18px;
   color: black;
-  background-color: violet;
+  background-color: pink;
   display:none;
 }
 
