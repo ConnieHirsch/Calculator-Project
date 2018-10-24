@@ -10,7 +10,7 @@ var operand;
 var eKeypress;
 
 /*
-** If the user clicks or taps the number buttons, send the
+** If the user clicks or taps the entry buttons on the screen, send the
 ** value directly to runTheCalc()
 */
 $('button').click(function() {
@@ -21,6 +21,7 @@ $('button').click(function() {
 
 /*
 ** central calculation engine
+** number and decimal values are parsed into operation values
 ** C means clear summation value
 ** +,-,x,/ are operands
 ** = signals end of adding operand, summing up operation, and commences
@@ -101,6 +102,7 @@ function handleDecimals(value) {
 // Check for a keypress -- if we want to run this like a calculator
 //  on a desktop, must be able to use number pad.
 //  If the keycode is matched to the e.which, send the value on to runtheCalc()
+//  NOTE: all other keys only go to console.
 $(function(){
     $(document).on('keypress', function(e){
         console.log(e.which);
