@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/xcustom.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Button Test</title>
+</head>
+<style type="text/css">
+  .grid-container {
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-gap: 10px;
+  }
+  button {
+    height: 80px;
+  }
+  .topRow {
+        grid-column: 1 / 5;
+        grid-row: 1;
+  }
+  .bottomRow {
+        grid-column: 3 / 5;
+        grid-row: 6;
+  }
+  .longButton {
+    width: 170px;
+    text-align: center;
+}
+</style>
+<body>
+    <div class="grid-container">
+      <div class="topRow">
+        <button class="longButton">C</button>
+      </div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>-</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>x</button>
+      <button></button>
+      <button>0</button>
+      <button>.</button>
+      <button>/</button>
+      <div class="bottomRow">
+        <button class="longButton">=</button>
+      </div>
+    </div>
+    <script src="calc.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
