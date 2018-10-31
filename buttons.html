@@ -30,6 +30,7 @@ p {
     display: grid;
     grid-template-columns: 75px 75px 75px 75px;
     grid-gap: 10px;
+    width: 350px;
 }
 
 button {
@@ -81,13 +82,14 @@ button {
 #calcbody {
     background-color: #aaa;
     height: 100%;
-    width: 1fr;
+    max-width: 400px;
     margin: 10px;
     padding: 5px;
 }
 </style>
 
 <body>
+  <div id="calcNav"></div>
   <div id="calcbody">
     <div class="grid-container">
         <div id="summation">0</div>
@@ -120,6 +122,11 @@ button {
   </div>
     <script src="calc.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $("#calcNav").load("calcNav.html");
+</script>
+
 </body>
 
 </html>
