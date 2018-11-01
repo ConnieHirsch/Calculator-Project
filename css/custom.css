@@ -1,8 +1,4 @@
 /*! custom.css */
-* {
-    box-sizing: border-box;
-}
-
 body {
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 40px;
@@ -86,6 +82,8 @@ button {
 }
 #addend {
   display: inline-block;
+  text-align: right;
+  width: 125px;
 }
 
 
