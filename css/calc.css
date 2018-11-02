@@ -5,10 +5,12 @@ body {
     color: #888;
     background-color: #84a;
 }
+
 p {
-  font-size: 14px;
-  color: black;
+    font-size: 14px;
+    color: black;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -18,6 +20,7 @@ p {
 
 button {
     height: 55px;
+    border-radius: 5px;
 }
 
 #summation {
@@ -31,27 +34,38 @@ button {
     color: red;
 }
 
+#calcbody {
+    background-color: #aaa;
+    height: 100%;
+    width: 95vw;
+    margin: 10px;
+    padding: 5px;
+}
+
+#addend {
+    display: inline;
+    width: 138px;
+    height: 65px;
+    margin: 5px 0;
+    text-align: right;
+}
+
+.ticker {
+    grid-column: 1 / 3;
+    width: auto;
+    height: 60px;
+    overflow: auto;
+    font-size: 14px;
+    color: black;
+    background-color: violet;
+    display: none;
+}
+
 .topRow {
     grid-column: 1 / 5;
     grid-row: 2;
 }
-#addend {
-  display: inline;
-    width: 138px;
-  height: 65px;
-  margin: 5px 0;
-  text-align: right;
-}
-.ticker {
-  grid-column: 1 / 3;
-  width: auto;
-  height: 60px;
-  overflow: auto;
-  font-size: 14px;
-  color: black;
-  background-color: violet;
-  display:none;
-}
+
 .bottomRow {
     grid-column: 3 / 5;
     grid-row: 7;
@@ -61,19 +75,29 @@ button {
     width: 138px;
     text-align: center;
 }
+
 .hiddenButton {
     background-color: #aaa;
     cursor: none;
     border: none;
 }
 
-#calcbody {
-    background-color: #aaa;
-    height: 100%;
-    width: 95vw;
-    margin: 10px;
-    padding: 5px;
-}
 .nav {
     font-size: 18px;
+}
+
+@media (min-width: 500px) {
+  #calcbody {
+    max-width: 480px;
+  }
+  .grid-container {
+    width: 400px;
+    grid-gap: 10px;
+  }
+  button {
+    height: 80px;
+  }
+  .longButton {
+    width: 195px;
+  }
 }
