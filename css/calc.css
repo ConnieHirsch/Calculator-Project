@@ -11,16 +11,14 @@ p {
     color: black;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 4px;
-    width: 280px;
-}
-
 button {
     height: 55px;
     border-radius: 5px;
+    border-bottom: solid 2px #84a;
+    border-right:  solid 2px #84a;
+}
+button:hover {
+  color: red;
 }
 
 #summation {
@@ -35,11 +33,21 @@ button {
 }
 
 #calcbody {
+  display:grid;
+  justify-content: center;
     background-color: #aaa;
     height: 100%;
     width: 95vw;
     margin: 10px;
     padding: 5px;
+    border-radius: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4px;
+    width: 280px;
 }
 
 #addend {
@@ -89,6 +97,9 @@ button {
 @media (min-width: 500px) {
   #calcbody {
     max-width: 480px;
+    margin: 20px auto auto auto;
+    padding-bottom: 30px;
+    border-radius: 25px;
   }
   .grid-container {
     width: 400px;
@@ -96,8 +107,19 @@ button {
   }
   button {
     height: 80px;
+    font-size: 40px;
+  }
+  button:hover {
+    font-weight: 900;
+    text-shadow:  2px 2px #888;
   }
   .longButton {
     width: 195px;
   }
+  #summation {
+    width: auto;
+    height: 70px;
+    font-size: 55px;
+  }
+
 }
