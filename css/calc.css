@@ -90,8 +90,13 @@ button:hover {
     border: none;
 }
 
+/* change a couple Bootstrap values*/
+
 .nav {
     font-size: 18px;
+}
+.navbar-toggle {
+  height: 10px;
 }
 
 @media (min-width: 500px) {
