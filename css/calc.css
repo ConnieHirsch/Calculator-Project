@@ -89,6 +89,14 @@ button:hover {
     cursor: none;
     border: none;
 }
+/* about.html specific */
+.about {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+.about header {
+  color: purple;
+}
 
 /* change a couple Bootstrap values*/
 
@@ -96,7 +104,7 @@ button:hover {
     font-size: 18px;
 }
 .navbar-toggle {
-  height: 10px;
+  height: 15px;
 }
 
 @media (min-width: 500px) {
