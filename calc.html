@@ -1,5 +1,3 @@
-<!-- Calculator Project
-// -->
 <!DOCTYPE html>
 <html>
 
@@ -8,87 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/calc.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <title>My Little Calculator</title>
+    <title>Calculator Alternative Buttons</title>
 </head>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="calc.html">Calculator</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="calc.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<style type="text/css">
+
+</style>
 
 <body>
-    <div id="calcbody">
-        <div class="container">
-            <div class="row">
-                <div id="summation">0</div>
-            </div>
-            <div class="btn-group btn-group-justified">
-                <div class="col-sm-12">
-                    <div class="btn-group"><button class="btn longButton">C</button></div>
-                    <div id="addend"></div>
-                </div>
-            </div>
-            <div class="btn-group btn-group-justified">
-                <div class="col-sm-12">
-                    <div class="btn-group"><button class="btn">1</button></div>
-                    <div class="btn-group"><button class="btn">2</button></div>
-                    <div class="btn-group"><button class="btn">3</button></div>
-                    <div class="btn-group"><button class="btn">+</button></div>
-                </div>
-            </div>
-            <div class="btn-group btn-group-justified">
-                <div class="col-sm-12">
-                    <div class="btn-group"><button class="btn">4</button></div>
-                    <div class="btn-group"><button class="btn">5</button></div>
-                    <div class="btn-group"><button class="btn">6</button></div>
-                    <div class="btn-group"><button class="btn">-</button></div>
-                </div>
-            </div>
-            <div class="btn-group btn-group-justified">
-                <div class="col-sm-12">
-                    <div class="btn-group"><button class="btn">7</button></div>
-                    <div class="btn-group"><button class="btn">8</button></div>
-                    <div class="btn-group"><button class="btn">9</button></div>
-                    <div class="btn-group"><button class="btn">x</button></div>
-                </div>
-            </div>
-            <div class="btn-group btn-group-justified">
-                <div class="col-sm-12">
-                    <div class="btn-group"><button class="btn hiddenButton">&nbsp;</button></div>
-                    <div class="btn-group"><button class="btn">0</button></div>
-                    <div class="btn-group"><button class="btn">.</button></div>
-                    <div class="btn-group"><button class="btn">/</button></div>
-                </div>
-            </div>
+  <div id="calcNav"></div>
+  <div id="calcbody">
+    <div class="grid-container">
+        <div id="summation">0</div>
+        <div class="topRow">
+            <button class="longButton">C</button>
+            <div id="addend"></div>
         </div>
-        <div id="input">
-            <div class="btn-group btn-group-justified">
-                <div class="col-sm-12">
-                    <button class="btn longButton">=</button>
-                </div>
-                <div class="col-sm-12">
-                  <div class="ticker"></div>
-              </div>
-            </div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>-</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>x</button>
+        <button class="hiddenButton"></button>
+        <button>0</button>
+        <button>.</button>
+        <button>/</button>
+        <div class="bottomRow">
+            <button class="longButton">=</button>
         </div>
+        <div class="ticker"></div>
+
     </div>
+  </div>
     <script src="calc.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $("#calcNav").load("calcNav.html");
+</script>
+
 </body>
 
 </html>
