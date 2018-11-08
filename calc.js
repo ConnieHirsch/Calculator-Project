@@ -48,23 +48,8 @@ function runTheCalc(myEntry) {
         var product = MyAddend + operand + sum;
         $('#addend').text(product);
         // now we actually calculate and handle result.
-        switch (operand) {
-            case "+":
-                sum = handleDecimals(parseFloat(MyAddend) + parseFloat(sum));
-                break;
-            case "-":
-                sum = handleDecimals(parseFloat(MyAddend) - parseFloat(sum));
-                break;
-            case "x":
-                sum = handleDecimals(parseFloat(MyAddend) * parseFloat(sum));
-                break;
-            case "/":
-                sum = handleDecimals(parseFloat(MyAddend) / parseFloat(sum));
-                break;
-            default:
-                console.log("Problem with myEntry: " + myEntry);
-        }
-
+        sum = Calculate(operand);
+        // onto the closing act!
         floatedString = parseFloat(sum);
         // Sooner or later, someone will try dividing by 0
                 if (floatedString.toString() == "Infinity") {
@@ -97,6 +82,27 @@ function handleDecimals(value) {
     value = value.toFixed(3);
     return value;
   }
+}
+
+// Calculate!
+function Calculate(operand){
+        switch (operand) {
+            case "+":
+                sum = handleDecimals(parseFloat(MyAddend) + parseFloat(sum));
+                break;
+            case "-":
+                sum = handleDecimals(parseFloat(MyAddend) - parseFloat(sum));
+                break;
+            case "x":
+                sum = handleDecimals(parseFloat(MyAddend) * parseFloat(sum));
+                break;
+            case "/":
+                sum = handleDecimals(parseFloat(MyAddend) / parseFloat(sum));
+                break;
+            default:
+                console.log("Problem with myEntry: " + myEntry);
+        }
+        return sum;
 }
 
 // Check for a keypress -- if we want to run this like a calculator
