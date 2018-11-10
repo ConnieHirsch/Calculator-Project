@@ -52,7 +52,7 @@ function runTheCalc(myEntry) {
             // show the calculation in the addend section.
             var product = MyAddend + operand + sum;
             // now we actually calculate and handle result.
-            runningTotal = Calculate(operand);
+            runningTotal = Calculate(operand, MyAddend, sum);
             product = product + "=" + runningTotal;
             $('#addend').text(product);
             sum = 0;
@@ -69,7 +69,7 @@ function runTheCalc(myEntry) {
         var product = MyAddend + operand + sum;
         $('#addend').text(product);
         // now we actually calculate and handle result.
-        sum = Calculate(operand);
+        sum = Calculate(operand, MyAddend, sum);
         // onto the closing act!
         floatedString = parseFloat(sum);
         // Sooner or later, someone will try dividing by 0
@@ -109,7 +109,7 @@ function handleDecimals(value) {
 }
 
 // Calculate!
-function Calculate(operand) {
+function Calculate(operand, MyAddend, sum) {
     switch (operand) {
         case "+":
             sum = handleDecimals(parseFloat(MyAddend) + parseFloat(sum));
