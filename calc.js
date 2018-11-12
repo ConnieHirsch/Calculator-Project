@@ -38,10 +38,10 @@ function runTheCalc(myEntry) {
         $('#summation').text("0");
         $('#addend').text("");
     } else if (myEntry == "+" || myEntry == "-" || myEntry == "x" || myEntry == "/") {
+            operand = myEntry;
         if ($('#addend').text() == "") {
             console.log("I have an empty addend!");
             MyAddend = sum;
-            operand = myEntry;
             $('#addend').text(myEntry + " " + MyAddend);
             sum = 0;
             $('#summation').text("0");
@@ -66,10 +66,18 @@ function runTheCalc(myEntry) {
         console.log("addend: " + MyAddend);
         console.log("sum for operation: " + sum);
         // show the calculation in the addend section.
-        var product = MyAddend + operand + sum;
-        $('#addend').text(product);
-        // now we actually calculate and handle result.
-        sum = Calculate(operand, MyAddend, sum);
+        // detect a running total, handle accordingly
+        if (runningTotal != 0) {
+            var product = runningTotal + operand + sum;
+            $('#addend').text(product);
+            console.log("Post a running total: " + runningTotal + " " + operand + " " + sum);
+            sum = Calculate(operand, runningTotal, sum);
+        } else {
+            var product = MyAddend + operand + sum;
+            $('#addend').text(product);
+            // now we actually calculate and handle result.
+            sum = Calculate(operand, MyAddend, sum);
+        }
         // onto the closing act!
         floatedString = parseFloat(sum);
         // Sooner or later, someone will try dividing by 0
@@ -82,6 +90,7 @@ function runTheCalc(myEntry) {
         $('.ticker').prepend(product + " = " + floatedString.toString() + "<br/>").show();
         sum = 0;
         addend = 0;
+        operand = "";
         runningTotal = 0;
 
     } else {
