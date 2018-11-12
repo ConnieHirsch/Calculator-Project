@@ -35,6 +35,7 @@ function runTheCalc(myEntry) {
     if (myEntry == "C") {
         sum = 0;
         addend = 0;
+        operand = "";
         $('#summation').text("0");
         $('#addend').text("");
     } else if (myEntry == "+" || myEntry == "-" || myEntry == "x" || myEntry == "/") {
@@ -42,7 +43,7 @@ function runTheCalc(myEntry) {
         if ($('#addend').text() == "") {
             console.log("I have an empty addend!");
             MyAddend = sum;
-            $('#addend').text(myEntry + " " + MyAddend);
+            showAddend(myEntry + " " + MyAddend);
             sum = 0;
             $('#summation').text("0");
         } else {
@@ -53,8 +54,8 @@ function runTheCalc(myEntry) {
             var product = MyAddend + operand + sum;
             // now we actually calculate and handle result.
             runningTotal = Calculate(operand, MyAddend, sum);
-            product = product + "=" + runningTotal;
-            $('#addend').text(product);
+            product = product + " = " + runningTotal;
+            showAddend(product);
             sum = 0;
             $('#summation').text("0");
 
@@ -68,16 +69,15 @@ function runTheCalc(myEntry) {
         // show the calculation in the addend section.
         // detect a running total, handle accordingly
         if (runningTotal != 0) {
-            var product = runningTotal + operand + sum;
-            $('#addend').text(product);
-            console.log("Post a running total: " + runningTotal + " " + operand + " " + sum);
+            var product = runningTotal + " " + operand + " " + sum;
+            console.log("Post a running total: " + product);
             sum = Calculate(operand, runningTotal, sum);
         } else {
-            var product = MyAddend + operand + sum;
-            $('#addend').text(product);
+            var product = MyAddend + " " + operand + " " + sum;
             // now we actually calculate and handle result.
             sum = Calculate(operand, MyAddend, sum);
         }
+        showAddend(product);
         // onto the closing act!
         floatedString = parseFloat(sum);
         // Sooner or later, someone will try dividing by 0
@@ -92,6 +92,8 @@ function runTheCalc(myEntry) {
         addend = 0;
         operand = "";
         runningTotal = 0;
+                $("#addend").css( "fontSize", "30px" );
+
 
     } else {
         // We are pressing a number key
@@ -138,6 +140,16 @@ function Calculate(operand, MyAddend, sum) {
     return sum;
 }
 
+// if Addend field (presenting current calculation) is more than 6 characters, reduce it in sice
+function showAddend(product) {
+    console.log("Product is " + product.length + " characters long.")
+    if (product.length > 9) {
+        $("#addend").css( "fontSize", "15px" );
+    } else if (product.length > 6) {
+        $("#addend").css( "fontSize", "20px" );
+    }
+        $('#addend').text(product);
+}
 // Check for a keypress -- if we want to run this like a calculator
 //  on a desktop, must be able to use number pad.
 //  If the keycode is matched to the e.which, send the value on to runtheCalc()
