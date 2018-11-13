@@ -6,6 +6,7 @@ var sum = parseFloat($('#summation').text());
 var MyAddend = 0;
 // operand for calculation of sum and addend
 var operand;
+var prevOperand; //to keep the operand value for running totals
 // holds keypress value from keyboard
 var eKeypress;
 // keep a running total
@@ -39,9 +40,10 @@ function runTheCalc(myEntry) {
         $('#summation').text("0");
         $('#addend').text("");
     } else if (myEntry == "+" || myEntry == "-" || myEntry == "x" || myEntry == "/") {
-            operand = myEntry;
+        operand = myEntry;
         if ($('#addend').text() == "") {
             console.log("I have an empty addend!");
+            prevOperand = operand;
             MyAddend = sum;
             showAddend(myEntry + " " + MyAddend);
             sum = 0;
@@ -50,10 +52,11 @@ function runTheCalc(myEntry) {
             console.log("on a second go-round");
             console.log("addend: " + MyAddend);
             console.log("sum for operation: " + sum);
+            console.log ("previous operand: " + prevOperand);
             // show the calculation in the addend section.
-            var product = MyAddend + operand + sum;
+            var product = MyAddend + prevOperand + sum;
             // now we actually calculate and handle result.
-            runningTotal = Calculate(operand, MyAddend, sum);
+            runningTotal = Calculate(prevOperand, MyAddend, sum);
             product = product + " = " + runningTotal;
             showAddend(product);
             sum = 0;
@@ -92,7 +95,7 @@ function runTheCalc(myEntry) {
         addend = 0;
         operand = "";
         runningTotal = 0;
-                $("#addend").css( "fontSize", "30px" );
+        $("#addend").css("fontSize", "30px");
 
 
     } else {
@@ -144,11 +147,11 @@ function Calculate(operand, MyAddend, sum) {
 function showAddend(product) {
     console.log("Product is " + product.length + " characters long.")
     if (product.length > 9) {
-        $("#addend").css( "fontSize", "15px" );
+        $("#addend").css("fontSize", "15px");
     } else if (product.length > 6) {
-        $("#addend").css( "fontSize", "20px" );
+        $("#addend").css("fontSize", "20px");
     }
-        $('#addend').text(product);
+    $('#addend').text(product);
 }
 // Check for a keypress -- if we want to run this like a calculator
 //  on a desktop, must be able to use number pad.
